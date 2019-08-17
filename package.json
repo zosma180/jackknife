@@ -1,0 +1,30 @@
+{
+  "name": "jackknife",
+  "version": "1.0.0",
+  "description": "The useful compact tool.",
+  "homepage": "https://github.com/zosma180/jackknife",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zosma180/jackknife.git"
+  },
+  "main": "index.js",
+  "keywords": [
+    "jackknife",
+    "tool",
+    "util",
+    "utility",
+    "function",
+    "math",
+    "ts",
+    "typescript"
+  ],
+  "author": "zosma",
+  "license": "MIT",
+  "devDependencies": {
+    "http-server": "^0.11.1",
+    "jasmine-core": "^3.4.0"
+  },
+  "scripts": {
+    "test": "http-server -o http://127.0.0.1:8080/test.html?param=the%20value"
+  }
+}
