@@ -7,7 +7,13 @@
     "type": "git",
     "url": "git+https://github.com/zosma180/jackknife.git"
   },
-  "main": "index.js",
+  "main": "dist/jackknife.js",
+  "scripts": {
+    "lint": "tslint -c tslint.json 'src/**/*.ts'",
+    "build": "bash ./build",
+    "deploy": "bash ./deploy",
+    "test": "bash ./test/run"
+  },
   "keywords": [
     "jackknife",
     "tool",
@@ -21,10 +27,11 @@
   "author": "zosma",
   "license": "MIT",
   "devDependencies": {
-    "http-server": "^0.11.1",
-    "jasmine-core": "^3.4.0"
-  },
-  "scripts": {
-    "test": "http-server -o http://127.0.0.1:8080/test.html?param=the%20value"
+    "@types/jasmine": "^3.4.0",
+    "jasmine-core": "^3.4.0",
+    "live-server": "^1.2.1",
+    "tslint": "^5.18.0",
+    "typescript": "^3.5.3",
+    "uglify-js": "^3.6.0"
   }
 }

@@ -1,0 +1,8 @@
+{
+  "extends": "../tsconfig.json",
+  "exclude": [],
+  "compilerOptions": {
+    "declaration": false,
+    "outDir": "../test/bundle"
+  }
+}

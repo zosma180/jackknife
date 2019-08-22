@@ -13,9 +13,10 @@
 **jackknife** is a multi-tool that provides a set of utility functions to face the wild projects.  
 All blades are typescript compatible.
 
+---
 
 ## Installation
-```
+```bash
 npm i jackknife
 ```
 
@@ -28,17 +29,25 @@ import { clone, getPassword, sort } from 'jackknife';
 const { clone, getPassword, sort } = require('jackknife');
 ```
 
+---
 
 ## Browser support
-Latest versions of Chrome, Firefox, Opera, Safari, Edge and IE 9+.  
-Special notes for IE:
+Latest versions of Chrome, Firefox, Opera, Safari, Edge and IE 9+ (*).
+
+\* **Notes** for **IE**:
 - **getQueue** API require **Promise** support, so it doesn't work on all IE versions.
 - **requestFullscreen** and **exitFullscreen** API require **Fullscreen** support, available only in IE 11.
 
+---
 
-## Bugs and feature requests
+## Test, Bugs and Feature requests
+If you want to run unit test:
+```bash
+npm test
+```
 For bugs and feature requests, please create an issue.
 
+---
 
 ## API
 
@@ -59,7 +68,9 @@ For bugs and feature requests, please create an issue.
   - [getCode](#getCode)
   - [getPassword](#getPassword)
 * Object
+  - [KeyValue](#KeyValue)
   - [clone](#clone)
+  - [getNested](#getNested)
 * Query string
   - [getQuery](#getQuery)
   - [getQueryParam](#getQueryParam)
@@ -72,7 +83,7 @@ For bugs and feature requests, please create an issue.
 ---
 
 ### getCookie
-<code>getCookie(name: string): string | null;</code>
+<code>getCookie(name: string): string | null</code>
 
 Get the value of a cookie.
 
@@ -81,7 +92,7 @@ Get the value of a cookie.
 ---
 
 ### setCookie
-<code>setCookie(name: string, value: string, options?: Partial\<CookieOptions\>): void;</code>
+<code>setCookie(name: string, value: string, options: CookieOptions = {}): void</code>
 
 Set the value of a cookie.
 
@@ -107,7 +118,7 @@ For the details of CookieOptions see
 ---
 
 ### deleteCookie
-<code>deleteCookie(name: string): void;</code>
+<code>deleteCookie(name: string): void</code>
 
 Delete a cookie.
 
@@ -116,7 +127,7 @@ Delete a cookie.
 ---
 
 ### random
-<code>random(min: number, max: number, float?: boolean): number;</code>
+<code>random(min: number, max: number, float = false): number</code>
 
 Generate a random number (integer or float) in the defined range.
 
@@ -128,17 +139,16 @@ const randomFloat = random(5, 10, true);
 ---
 
 ### round
-<code>round(value: number, decimals?: number): number;</code>
+<code>round(value: number, decimals = 2): number</code>
 
 Round a number with the defined precision of decimals.
-**decimals** is **2** by default.
 
 <pre>const rounded = round(0.15666, 3); // 0.157</pre>
 
 ---
 
 ### degToRad
-<code>degToRad(degrees: number): number;</code>
+<code>degToRad(degrees: number): number</code>
 
 Convert degrees to radians.
 
@@ -147,7 +157,7 @@ Convert degrees to radians.
 ---
 
 ### radToDeg
-<code>radToDeg(radians: number): number;</code>
+<code>radToDeg(radians: number): number</code>
 
 Convert radians to degrees.
 
@@ -156,7 +166,7 @@ Convert radians to degrees.
 ---
 
 ### chunks
-<code>chunks\<T\>(array: T[], chunkSize: number): T[][];</code>
+<code>chunks\<T\>(array: T[], chunkSize: number): T[][]</code>
 
 Split an array in a defined number of chunks.
 
@@ -169,10 +179,10 @@ console.log(arrayChunks); // [['a', 'b'], ['c', 'd'], ['e']];
 ---
 
 ### sort
-<code>sort\<T\>(array: T[], key: string, sortType?: string): T[];</code>
+<code>sort\<T\>(array: T[], key: string, sortType: 'asc' | 'desc' = 'asc'): T[]</code>
 
 Sort an array of objects by a defined object property.  
-**sortType** can be '**asc**' or '**desc**', default is '**asc**'.
+'key' can be a nested property (see [getNested](#getNested)).
 
 <pre>
 const array = [{ name: 'b' }, { name: 'c' }, { name: 'a' }];
@@ -183,7 +193,7 @@ console.log(sorted); // [{ name: 'a' }, { name: 'b' }, { name: 'c' }];
 ---
 
 ### shuffle
-<code>shuffle\<T\>(array: T[]): T[];</code>
+<code>shuffle\<T\>(array: T[]): T[]</code>
 
 Shuffle an array.
 
@@ -196,12 +206,10 @@ console.log(shuffled); // i.e. ['b', 'd', 'c', 'a', 'e']
 ---
 
 ### getCode
-<code>getCode(length?: number, chars?: string): string;</code>
+<code>getCode(length = 10, chars = 'all'): string</code>
 
 Generate a random string.  
-**length** is **10** by default.  
 **chars** is the set of characters to use. It can be a predefined set between '**alphanumeric**', '**letters**', '**lower-letters**', '**upper-letters**', '**numbers**', '**symbols**', '**all**' or a custom set.
-It is '**all**' by default.
 
 <pre>
 // Default
@@ -218,10 +226,10 @@ console.log(getCode(10, 'abc123$%&')); // i.e. '12&%c222ac'
 ---
 
 ### getPassword
-<code>getPassword(length?: number): string;</code>
+<code>getPassword(length = 10): string</code>
 
 Generate a strong password. It mix up letters, numbers and symbols proportionally.  
-**length** is **10** by default.
+**length** required a value >= **3**.
 
 <pre>
 const password = getPassword();
@@ -230,20 +238,45 @@ console.log(password); // i.e. ';7hsE_%-77'
 
 ---
 
+### KeyValue
+<code>interface KeyValue\<T\> { [key: string]: T; }</code>
+
+A useful generic interface to cast common key-value objects.
+
+<pre>
+const stringCasted = myObject as KeyValue&lt;string&gt;;
+const choiceCasted = myObject as KeyValue&lt;string | number&gt;;
+const genericCasted = myObject as KeyValue&lt;any&gt;;
+</pre>
+
+---
+
 ### clone
-<code>clone\<T\>(target: T, sameClass?: boolean): T;</code>
+<code>clone\<T\>(target: T, sameClass = true): T</code>
 
 Clone an object and its nested content.  
 If **sameClass** is true, the cloned object and its nested objects mantain the original class type instead of a generic 'Object' but it can create issues if the constructor of the objects to clone require any parameters.  
-In this case set the sameClass option to false and the objects will be cloned only by their content, skipping the contructor and loosing the class type.  
-sameClass is **true** by default.
+In this case set the sameClass option to false and the objects will be cloned only by their content, skipping the contructor and loosing the class type.
 
 <pre>const cloned = clone(myObject);</pre>
 
 ---
 
+### getNested
+<code>getNested\<T\>(root: KeyValue\<any\>, path: string): T | null</code>
+
+Get the nested value of a object property by a string path.
+
+<pre>
+const test = { a: { b: [{ c: 'value' }] } };
+const nested = getNested&lt;string&gt;(test, 'a.b.0.c');
+console.log(nested); // 'value'
+</pre>
+
+---
+
 ### getQuery
-<code>getQuery(): { [key: string]: string };</code>
+<code>getQuery(): { [key: string]: string }</code>
 
 Get the query string of the current url.
 
@@ -255,7 +288,7 @@ console.log(query); // i.e. { param: 'value' }
 ---
 
 ### getQueryParam
-<code>getQueryParam(name: string): string | null;</code>
+<code>getQueryParam(name: string): string | null</code>
 
 Get a specific param of the current query string.
 
@@ -267,7 +300,7 @@ console.log(param); // i.e. 'value'
 ---
 
 ### objToQuery
-<code>objToQuery(obj: { [key: string]: any }): string;</code>
+<code>objToQuery(target: KeyValue\<any\>): string</code>
 
 Convert an object to a valid query string.
 
@@ -279,7 +312,7 @@ console.log(query); // 'param1=value%201&param2=value%202'
 ---
 
 ### getQueue
-<code>getQueue<T>(tasks: (() => Promise\<T\>)[]): Promise\<T[]\>;</code>
+<code>getQueue\<T\>(tasks: (() => Promise\<T\>)[]): Promise\<T[]\></code>
 
 Serialize and execute a list of Promises in the provided order.  
 It return a Promise with the array of all ordered results.  

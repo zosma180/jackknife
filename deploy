@@ -1,0 +1,15 @@
+#!/bin/bash
+
+if [[ $1 != 'major' && $1 != 'minor' && $1 != 'patch' ]]; then
+  echo 'ERROR: Invalid version type. Please provide a value (major | minor | patch)'
+  exit 1
+fi
+
+# Build files
+npm run build || exit 1
+
+# Update version
+npm version --no-git-tag-version $1
+
+# Publish
+npm publish

@@ -1,0 +1,16 @@
+#!/bin/bash
+
+# Clean files
+rm -rf test/bundle
+
+# Lint source
+npm run lint || exit 1
+
+# Generate JS files and watch them
+npx tsc -w --project test/tsconfig.json & TID=$!
+
+# Run the local server
+npx live-server --watch=test --open="test/index.html?param=the%20value"
+
+# Stop tsc
+kill $TID > /dev/null 2>&1

@@ -1,0 +1,13 @@
+#!/bin/bash
+
+# Clean files
+rm -rf dist
+
+# Lint source
+npm run lint || exit 1
+
+# Compile source
+npx tsc || exit 1
+
+# Minify output
+npx uglifyjs --compress --mangle --output dist/jackknife.min.js -- dist/*.js

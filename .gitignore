@@ -2,6 +2,7 @@
 
 # compiled output
 /dist
+/test/bundle
 
 # dependencies
 /node_modules
