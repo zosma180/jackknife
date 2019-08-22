@@ -20,7 +20,7 @@ All blades are typescript compatible.
 npm i jackknife
 ```
 
-In order to use any API you have to import them.
+In order to use any API you have to import them:
 ```typescript
 // Typescript
 import { clone, getPassword, sort } from 'jackknife';
@@ -36,12 +36,12 @@ Latest versions of Chrome, Firefox, Opera, Safari, Edge and IE 9+ (*).
 
 \* **Notes** for **IE**:
 - **getQueue** API require **Promise** support, so it doesn't work on all IE versions.
-- **requestFullscreen** and **exitFullscreen** API require **Fullscreen** support, available only in IE 11.
+- **requestFullscreen** and **exitFullscreen** API require **Fullscreen** support, available in IE 11 only.
 
 ---
 
 ## Test, Bugs and Feature requests
-If you want to run unit test:
+If you want to execute unit test run:
 ```bash
 npm test
 ```
@@ -87,7 +87,10 @@ For bugs and feature requests, please create an issue.
 
 Get the value of a cookie.
 
-<pre>const token = getCookie('token');</pre>
+<pre>
+const token = getCookie('token');
+console.log(token); // cookie value
+</pre>
 
 ---
 
@@ -102,13 +105,13 @@ CookieOptions are:
 
 <pre>
 class CookieOptions {
-  expires: Date;
-  maxAge: number;
-  domain: string;
-  path: string;
-  secure: boolean;
-  httpOnly: boolean;
-  sameSite: 'Strict' | 'Lax' | 'None';
+  expires?: Date;
+  maxAge?: number;
+  domain?: string;
+  path?: string;
+  secure?: boolean;
+  httpOnly?: boolean;
+  sameSite?: 'Strict' | 'Lax' | 'None';
 }
 </pre>
 
@@ -133,7 +136,10 @@ Generate a random number (integer or float) in the defined range.
 
 <pre>
 const randomInteger = random(5, 10);
+console.log(randomInteger); // i.e. 7
+
 const randomFloat = random(5, 10, true);
+console.log(randomFloat); // i.e. 8.84293
 </pre>
 
 ---
@@ -143,7 +149,10 @@ const randomFloat = random(5, 10, true);
 
 Round a number with the defined precision of decimals.
 
-<pre>const rounded = round(0.15666, 3); // 0.157</pre>
+<pre>
+const rounded = round(0.15666, 3);
+console.log(rounded); // 0.157
+</pre>
 
 ---
 
@@ -152,7 +161,10 @@ Round a number with the defined precision of decimals.
 
 Convert degrees to radians.
 
-<pre>const radians = degToRad(180); // PI value</pre>
+<pre>
+const radians = degToRad(180);
+console.log(radians); // PI value
+</pre>
 
 ---
 
@@ -161,7 +173,10 @@ Convert degrees to radians.
 
 Convert radians to degrees.
 
-<pre>const degrees = radToDeg(Math.PI); // 180</pre>
+<pre>
+const degrees = radToDeg(Math.PI);
+console.log(degrees); // 180
+</pre>
 
 ---
 
@@ -172,7 +187,7 @@ Split an array in a defined number of chunks.
 
 <pre>
 const array = ['a', 'b', 'c', 'd', 'e'];
-const arrayChunks = chunks(array, 2);
+const arrayChunks = chunks&lt;string&gt;(array, 2);
 console.log(arrayChunks); // [['a', 'b'], ['c', 'd'], ['e']];
 </pre>
 
@@ -185,8 +200,9 @@ Sort an array of objects by a defined object property.
 'key' can be a nested property (see [getNested](#getNested)).
 
 <pre>
+interface TestItem { name: string; }
 const array = [{ name: 'b' }, { name: 'c' }, { name: 'a' }];
-const sorted = sort(array, 'name');
+const sorted = sort&lt;TestItem&gt;(array, 'name');
 console.log(sorted); // [{ name: 'a' }, { name: 'b' }, { name: 'c' }];
 </pre>
 
@@ -199,7 +215,7 @@ Shuffle an array.
 
 <pre>
 const array = ['a', 'b', 'c', 'd', 'e'];
-const shuffled = shuffle(array);
+const shuffled = shuffle&lt;string&gt;(array);
 console.log(shuffled); // i.e. ['b', 'd', 'c', 'a', 'e']
 </pre>
 
@@ -229,7 +245,7 @@ console.log(getCode(10, 'abc123$%&')); // i.e. '12&%c222ac'
 <code>getPassword(length = 10): string</code>
 
 Generate a strong password. It mix up letters, numbers and symbols proportionally.  
-**length** required a value >= **3**.
+**length** must be >= **3**.
 
 <pre>
 const password = getPassword();
@@ -241,7 +257,7 @@ console.log(password); // i.e. ';7hsE_%-77'
 ### KeyValue
 <code>interface KeyValue\<T\> { [key: string]: T; }</code>
 
-A useful generic interface to cast common key-value objects.
+An useful generic interface to cast common key-value objects.
 
 <pre>
 const stringCasted = myObject as KeyValue&lt;string&gt;;
@@ -258,7 +274,10 @@ Clone an object and its nested content.
 If **sameClass** is true, the cloned object and its nested objects mantain the original class type instead of a generic 'Object' but it can create issues if the constructor of the objects to clone require any parameters.  
 In this case set the sameClass option to false and the objects will be cloned only by their content, skipping the contructor and loosing the class type.
 
-<pre>const cloned = clone(myObject);</pre>
+<pre>
+const cloned = clone(myObject);
+console.log(cloned); // object cloned
+</pre>
 
 ---
 
@@ -268,9 +287,9 @@ In this case set the sameClass option to false and the objects will be cloned on
 Get the nested value of a object property by a string path.
 
 <pre>
-const test = { a: { b: [{ c: 'value' }] } };
+const test = { a: { b: [{ c: 'banana' }] } };
 const nested = getNested&lt;string&gt;(test, 'a.b.0.c');
-console.log(nested); // 'value'
+console.log(nested); // 'banana'
 </pre>
 
 ---
@@ -329,7 +348,7 @@ const tasks = [
   () => new Promise(resolve => resolve(3))
 ];
 
-getQueue(tasks)
+getQueue&lt;number&gt;(tasks)
   .then(results => console.log(results)); // [1, 2, 3]
 </pre>
 
