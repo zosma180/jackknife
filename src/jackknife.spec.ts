@@ -37,11 +37,14 @@ describe('jackknife', () => {
   /*********************************** Math ***********************************/
   describe('Math', () => {
     it('random', () => {
+      const error = new Error('jackknife: called "random" with invalid decimals.');
+      expect(() => random(5, 10, null as any)).toThrow(error);
+      expect(() => random(5, 10, -3)).toThrow(error);
       expect(random(undefined as any, undefined as any)).toBeNaN();
       expect(random(5, undefined as any)).toBeNaN();
       expect(random(5, 10)).toBeGreaterThanOrEqual(5);
       expect(random(5, 10)).toBeLessThanOrEqual(10);
-      expect(random(5, 10, true).toString()).toContain('.');
+      expect(random(5, 10, 3).toString()).toContain('.');
     });
 
     it('round', () => {
@@ -128,7 +131,6 @@ describe('jackknife', () => {
       expect(() => getPassword(0)).toThrow(error);
       expect(() => getPassword(2)).toThrow(error);
       expect(getPassword().length).toBe(10);
-      expect(getPassword(3).length).toBe(3);
       expect(getPassword(6).length).toBe(6);
     });
   });

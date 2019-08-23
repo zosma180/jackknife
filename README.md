@@ -130,7 +130,7 @@ Delete a cookie.
 ---
 
 ### random
-<code>random(min: number, max: number, float = false): number</code>
+<code>random(min: number, max: number, decimals = 0): number</code>
 
 Generate a random number (integer or float) in the defined range.
 
@@ -138,8 +138,8 @@ Generate a random number (integer or float) in the defined range.
 const randomInteger = random(5, 10);
 console.log(randomInteger); // i.e. 7
 
-const randomFloat = random(5, 10, true);
-console.log(randomFloat); // i.e. 8.84293
+const randomFloat = random(5, 10, 3);
+console.log(randomFloat); // i.e. 8.842
 </pre>
 
 ---
@@ -201,7 +201,7 @@ Sort an array of objects by a defined object property.
 
 <pre>
 interface TestItem { name: string; }
-const array = [{ name: 'b' }, { name: 'c' }, { name: 'a' }];
+const array: TestItem[] = [{ name: 'b' }, { name: 'c' }, { name: 'a' }];
 const sorted = sort&lt;TestItem&gt;(array, 'name');
 console.log(sorted); // [{ name: 'a' }, { name: 'b' }, { name: 'c' }];
 </pre>
@@ -245,7 +245,7 @@ console.log(getCode(10, 'abc123$%&')); // i.e. '12&%c222ac'
 <code>getPassword(length = 10): string</code>
 
 Generate a strong password. It mix up letters, numbers and symbols proportionally.  
-**length** must be >= **3**.
+**length** must be >= **6**.
 
 <pre>
 const password = getPassword();
@@ -331,7 +331,7 @@ console.log(query); // 'param1=value%201&param2=value%202'
 ---
 
 ### getQueue
-<code>getQueue\<T\>(tasks: (() => Promise\<T\>)[]): Promise\<T[]\></code>
+<code>getQueue\<T\>(tasks: Array\<() => Promise\<T\>\>): Promise\<T[]\></code>
 
 Serialize and execute a list of Promises in the provided order.  
 It return a Promise with the array of all ordered results.  

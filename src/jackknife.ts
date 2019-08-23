@@ -70,9 +70,13 @@ export function deleteCookie(name: string): void {
 }
 
 /*********************************** Math ***********************************/
-export function random(min: number, max: number, float = false): number {
+export function random(min: number, max: number, decimals = 0): number {
+  if (typeof decimals !== 'number' || decimals < 0) {
+    throw new Error('jackknife: called "random" with invalid decimals.');
+  }
+
   let result = Math.random() * (max - min) + min;
-  if (!float) { result = Math.round(result); }
+  result = round(result, decimals);
 
   return result;
 }
@@ -182,7 +186,7 @@ export function getCode(length = 10, chars = 'all'): string {
 }
 
 export function getPassword(length = 10): string {
-  if (typeof length !== 'number' || length < 3) {
+  if (typeof length !== 'number' || length < 6) {
     throw new Error('jackknife: called "getPassword" with invalid length.');
   }
 

@@ -1,5 +1,15 @@
-<a name="1.1.0"></a>
-## [1.1.0](https://github.com/zosma180/jackknife/compare/1.0.0...1.1.0) (2019-08-22)
+<a name="2.1.0"></a>
+## [2.1.0](https://github.com/zosma180/jackknife/compare/2.0.0...2.1.0) (2019-08-23)
+
+### Features
+
+* **random**: *WARNING* - replaced **float** option with the customizable **decimals** count
+* **getPassword**: *WARNING* - minimum **length** has been increased to **6**
+
+---
+
+<a name="2.0.0"></a>
+## [2.0.0](https://github.com/zosma180/jackknife/compare/1.0.0...2.0.0) (2019-08-22)
 
 ### Features
 
