@@ -1,3 +1,12 @@
+<a name="2.2.0"></a>
+## [2.2.0](https://github.com/zosma180/jackknife/compare/2.1.0...2.2.0) (2019-11-26)
+
+### Improvements
+
+* Added right links to README anchors
+
+---
+
 <a name="2.1.0"></a>
 ## [2.1.0](https://github.com/zosma180/jackknife/compare/2.0.0...2.1.0) (2019-08-23)
 
