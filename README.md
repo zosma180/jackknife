@@ -52,33 +52,33 @@ For bugs and feature requests, please create an issue.
 ## API
 
 * Cookie
-  - [getCookie](#getCookie)
-  - [setCookie](#setCookie)
-  - [deleteCookie](#deleteCookie)
+  - [getCookie](#getcookie)
+  - [setCookie](#setcookie)
+  - [deleteCookie](#deletecookie)
 * Math
   - [random](#random)
   - [round](#round)
-  - [degToRad](#degToRad)
-  - [radToDeg](#radToDeg)
+  - [degToRad](#degtorad)
+  - [radToDeg](#radtodeg)
 * Array
   - [chunks](#chunks)
   - [sort](#sort)
   - [shuffle](#shuffle)
 * String
-  - [getCode](#getCode)
-  - [getPassword](#getPassword)
+  - [getCode](#getcode)
+  - [getPassword](#getpassword)
 * Object
-  - [KeyValue](#KeyValue)
+  - [KeyValue](#keyvalue)
   - [clone](#clone)
-  - [getNested](#getNested)
+  - [getNested](#getnested)
 * Query string
-  - [getQuery](#getQuery)
-  - [getQueryParam](#getQueryParam)
-  - [objToQuery](#objToQuery)
+  - [getQuery](#getquery)
+  - [getQueryParam](#getqueryparam)
+  - [objToQuery](#objtoquery)
 * Misc
-  - [getQueue](#getQueue)
-  - [requestFullscreen](#requestFullscreen)
-  - [exitFullscreen](#exitFullscreen)
+  - [getQueue](#getqueue)
+  - [requestFullscreen](#requestfullscreen)
+  - [exitFullscreen](#exitfullscreen)
 
 ---
 
