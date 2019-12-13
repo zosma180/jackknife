@@ -1,3 +1,12 @@
+<a name="2.3.0"></a>
+## [2.3.0](https://github.com/zosma180/jackknife/compare/2.2.0...2.3.0) (2019-12-13)
+
+### Features
+
+* Added **objToParams** API
+
+---
+
 <a name="2.2.0"></a>
 ## [2.2.0](https://github.com/zosma180/jackknife/compare/2.1.0...2.2.0) (2019-11-26)
 

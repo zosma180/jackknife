@@ -1,4 +1,4 @@
-import { chunks, clone, degToRad, deleteCookie, getCode, getCookie, getNested, getPassword, getQuery, getQueryParam, getQueue, objToQuery, radToDeg, random, round, setCookie, shuffle, sort } from './jackknife';
+import { chunks, clone, degToRad, deleteCookie, getCode, getCookie, getNested, getPassword, getQuery, getQueryParam, getQueue, objToParams, objToQuery, radToDeg, random, round, setCookie, shuffle, sort } from './jackknife';
 
 describe('jackknife', () => {
 
@@ -190,6 +190,15 @@ describe('jackknife', () => {
       expect(objToQuery([])).toBe('');
       expect(objToQuery({})).toBe('');
       expect(objToQuery({ param: 'the value' })).toBe('param=the%20value');
+    });
+
+    it('objToParams', () => {
+      expect(objToParams(undefined as any)).toEqual({});
+      expect(objToParams(null as any)).toEqual({});
+      expect(objToParams([])).toEqual({});
+      expect(objToParams({})).toEqual({});
+      expect(objToParams({ a: 'value', b: 2, c: new Date('2020-01-01'), d: [2, 3], e: {} }))
+        .toEqual({ a: 'value', b: '2', c: '2020-01-01T00:00:00.000Z', d: '2,3' });
     });
   });
 

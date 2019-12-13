@@ -270,6 +270,31 @@ export function objToQuery(target: KeyValue<any>): string {
   return result.join('&');
 }
 
+export function objToParams(target: KeyValue<any>): KeyValue<string> {
+  if (!target || typeof target !== 'object') { return {}; }
+  const result: KeyValue<string> = {};
+  const keys = Object.keys(target);
+
+  for (const key of keys) {
+    const value = target[key];
+    let stringValue = '';
+
+    if (Array.isArray(value)) {
+      stringValue = value.join(',');
+    } else if (value instanceof Date) {
+      stringValue = value.toISOString();
+    } else if (typeof value === 'number' || typeof value === 'string') {
+      stringValue = String(value);
+    }
+
+    if (stringValue) {
+      result[key] = stringValue;
+    }
+  }
+
+  return result;
+}
+
 /*********************************** Misc ***********************************/
 export function getQueue<T>(tasks: Array<() => Promise<T>>): Promise<T[]> {
   const promise = (window as any).Promise;

@@ -75,6 +75,7 @@ For bugs and feature requests, please create an issue.
   - [getQuery](#getquery)
   - [getQueryParam](#getqueryparam)
   - [objToQuery](#objtoquery)
+  - [objToParams](#objtoparams)
 * Misc
   - [getQueue](#getqueue)
   - [requestFullscreen](#requestfullscreen)
@@ -326,6 +327,22 @@ Convert an object to a valid query string.
 <pre>
 const query = objToQuery({ param1: 'value 1', param2: 'value 2' );
 console.log(query); // 'param1=value%201&param2=value%202'
+</pre>
+
+---
+
+### objToParams
+<code>objToParams(target: KeyValue\<any\>): KeyValue\<string\></code>
+
+Convert an object to another object with properties casted as valid GET param.
+This function can be useful with some frameworks (i.e. Angular) that require a KeyValue\<string\> objects as params of HTTP GET request.
+The array values will be joined with the ','.
+The dates will be converted to ISO string.
+The pure objects will be skipped.
+
+<pre>
+const params = objToParams({ a: 'value', b: 2, c: new Date('2020-01-01'), d: [2, 3], e: {} });
+console.log(params); // { a: 'value', b: '2', c: '2020-01-01T00:00:00.000Z', d: '2,3' }
 </pre>
 
 ---
