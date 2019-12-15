@@ -1,3 +1,12 @@
+<a name="2.3.1"></a>
+## [2.3.1](https://github.com/zosma180/jackknife/compare/2.3.0...2.3.1) (2019-12-15)
+
+### Improvements
+
+* Added npmignore file to reduce the package output
+
+---
+
 <a name="2.3.0"></a>
 ## [2.3.0](https://github.com/zosma180/jackknife/compare/2.2.0...2.3.0) (2019-12-13)
 
