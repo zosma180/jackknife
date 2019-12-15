@@ -1,0 +1,6 @@
+# Development assets
+/scripts
+/test
+/tsconfig.json
+/tslint.json
+/logo.png

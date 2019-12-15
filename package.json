@@ -10,8 +10,8 @@
   "main": "dist/jackknife.js",
   "scripts": {
     "lint": "tslint -c tslint.json 'src/**/*.ts'",
-    "build": "bash ./build",
-    "deploy": "bash ./deploy",
+    "build": "bash ./scripts/build",
+    "deploy": "bash ./scripts/deploy",
     "test": "bash ./test/run"
   },
   "keywords": [
