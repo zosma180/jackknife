@@ -1,3 +1,12 @@
+<a name="2.4.1"></a>
+## [2.4.1](https://github.com/zosma180/jackknife/compare/2.4.0...2.4.1) (2019-12-16)
+
+### Improvements
+
+* Added "src" folder to npmignore
+
+---
+
 <a name="2.4.0"></a>
 ## [2.4.0](https://github.com/zosma180/jackknife/compare/2.3.1...2.4.0) (2019-12-16)
 
