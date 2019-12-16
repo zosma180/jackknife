@@ -1,4 +1,4 @@
-<p align="center"><img src="logo.png" alt="jackknife logo"></p>
+<p align="center"><img src="logo.png" alt="jackknife logo" height="120"></p>
 
 # jackknife
 
