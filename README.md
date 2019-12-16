@@ -58,6 +58,7 @@ For bugs and feature requests, please create an issue.
 * Math
   - [random](#random)
   - [round](#round)
+  - [unique](#unique)
   - [degToRad](#degtorad)
   - [radToDeg](#radtodeg)
 * Array
@@ -153,6 +154,18 @@ Round a number with the defined precision of decimals.
 <pre>
 const rounded = round(0.15666, 3);
 console.log(rounded); // 0.157
+</pre>
+
+---
+
+### unique
+<code>unique(): number</code>
+
+Generate an unique integer useful as an ID value.
+
+<pre>
+const uniqueInteger = unique();
+console.log(uniqueInteger); // 15764928947236012
 </pre>
 
 ---

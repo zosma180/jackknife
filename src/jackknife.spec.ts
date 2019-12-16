@@ -1,4 +1,4 @@
-import { chunks, clone, degToRad, deleteCookie, getCode, getCookie, getNested, getPassword, getQuery, getQueryParam, getQueue, objToParams, objToQuery, radToDeg, random, round, setCookie, shuffle, sort } from './jackknife';
+import { chunks, clone, degToRad, deleteCookie, getCode, getCookie, getNested, getPassword, getQuery, getQueryParam, getQueue, objToParams, objToQuery, radToDeg, random, round, setCookie, shuffle, sort, unique } from './jackknife';
 
 describe('jackknife', () => {
 
@@ -57,6 +57,11 @@ describe('jackknife', () => {
       expect(decimals(round(test, 5))).toBe(5);
       expect(decimals(round(test, 0))).toBe(0);
       expect(decimals(round(test, 20))).toBe(9);
+    });
+
+    it('unique', () => {
+      expect(typeof unique()).toBe('number');
+      expect(unique()).not.toBe(unique());
     });
 
     it('degToRad', () => {

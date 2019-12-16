@@ -91,6 +91,10 @@ export function round(value: number, decimals = 2): number {
   return Math.round(value * factor) / factor;
 }
 
+export function unique(): number {
+  return Number(Date.now().toString() + random(1000, 9999).toString());
+}
+
 export function degToRad(degrees: number): number {
   return degrees * (Math.PI / 180);
 }
