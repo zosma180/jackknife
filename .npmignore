@@ -1,4 +1,5 @@
 # Development assets
+/src
 /scripts
 /test
 /tsconfig.json
