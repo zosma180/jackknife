@@ -1,16 +1,37 @@
-#!/bin/bash
+#!/usr/bin/env node
 
-# Clean files
-rm -rf test/bundle
+'use strict';
+const { exec, execSync } = require('child_process');
 
-# Lint source
-npm run lint || exit 1
+// Clean the bundle
+execSync('rm -rf test/bundle');
 
-# Generate JS files and watch them
-npx tsc -w --project test/tsconfig.json & TID=$!
+// Lint the sources
+try {
+  execSync('npm run lint', { stdio: 'inherit' });
+} catch (e) {
+  error('Lint failed, operation aborted.');
+}
 
-# Run the local server
-npx live-server --watch=test --open="test/index.html?param=the%20value"
+// Compile the sources and watch them
+const tsc = exec('npx tsc -w --project test/tsconfig.json');
+tsc.stdout.on('data', data => console.log(String(data)));
+tsc.stderr.on('data', data => {
+  console.error(String(data));
+  error('Build failed, operation aborted.');
+});
 
-# Stop tsc
-kill $TID > /dev/null 2>&1
+// Run the local test server
+const server = exec('npx live-server --watch=test --open="test/index.html?param=the%20value"');
+server.stdout.on('data', data => console.log(String(data)));
+server.stderr.on('data', data => error(String(data)));
+server.on('close', code => {
+  tsc.kill();
+  process.exit(code);
+});
+
+// Error function
+function error(message) {
+  console.error('\x1b[41m%s\x1b[0m', message, '\n');
+  process.exit(1);
+}

@@ -1,3 +1,13 @@
+<a name="2.4.2"></a>
+## [2.4.2](https://github.com/zosma180/jackknife/compare/2.4.1...2.4.2) (2019-12-19)
+
+### Improvements
+
+* Updated logo
+* Converted development scripts to node
+
+---
+
 <a name="2.4.1"></a>
 ## [2.4.1](https://github.com/zosma180/jackknife/compare/2.4.0...2.4.1) (2019-12-16)
 
