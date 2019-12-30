@@ -1,4 +1,4 @@
-import { chunks, clone, degToRad, deleteCookie, getCode, getCookie, getNested, getPassword, getQuery, getQueryParam, getQueue, objToParams, objToQuery, radToDeg, random, round, setCookie, shuffle, sort, unique } from './jackknife';
+import { chunks, clone, degToRad, deleteCookie, getCode, getCookie, getNested, getPassword, getQuery, getQueryParam, getQueue, objToParams, objToQuery, radToDeg, random, range, round, setCookie, shuffle, sort, unique } from './jackknife';
 
 describe('jackknife', () => {
 
@@ -104,6 +104,17 @@ describe('jackknife', () => {
       const shuffled = shuffle(test);
       expect(shuffled.length).toBe(test.length);
       expect(JSON.stringify(shuffled)).not.toBe(JSON.stringify(test));
+    });
+
+    it('range', () => {
+      const array = range(8, 18);
+      expect(array[0]).toBe(8);
+      expect(array[4]).toBe(12);
+      expect(array[array.length - 1]).toBe(18);
+      expect(array.length).toBe(11);
+
+      const error = new Error('jackknife: called "range" with "min" greater than "max".');
+      expect(() => range(8, 1)).toThrow(error);
     });
   });
 

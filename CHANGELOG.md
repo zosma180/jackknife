@@ -1,3 +1,12 @@
+<a name="2.5.0"></a>
+## [2.5.0](https://github.com/zosma180/jackknife/compare/2.4.2...2.5.0) (2019-12-30)
+
+### Features
+
+* Added **range** API
+
+---
+
 <a name="2.4.2"></a>
 ## [2.4.2](https://github.com/zosma180/jackknife/compare/2.4.1...2.4.2) (2019-12-19)
 

@@ -65,6 +65,7 @@ For bugs and feature requests, please create an issue.
   - [chunks](#chunks)
   - [sort](#sort)
   - [shuffle](#shuffle)
+  - [range](#range)
 * String
   - [getCode](#getcode)
   - [getPassword](#getpassword)
@@ -231,6 +232,18 @@ Shuffle an array.
 const array = ['a', 'b', 'c', 'd', 'e'];
 const shuffled = shuffle&lt;string&gt;(array);
 console.log(shuffled); // i.e. ['b', 'd', 'c', 'a', 'e']
+</pre>
+
+---
+
+### range
+<code>range(min: number, max: number): number[]</code>
+
+Generate an array of numbers in a defined range.
+
+<pre>
+const array = range(8, 12);
+console.log(array); // [8, 9, 10, 11, 12]
 </pre>
 
 ---

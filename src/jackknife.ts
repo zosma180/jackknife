@@ -153,6 +153,20 @@ export function shuffle<T>(array: T[]): T[] {
   return result;
 }
 
+export function range(min: number, max: number): number[] {
+  if (max < min) {
+    throw new Error('jackknife: called "range" with "min" greater than "max".');
+  }
+
+  const result: number[] = [];
+
+  for (let n = min; n <= max; n++) {
+    result.push(n);
+  }
+
+  return result;
+}
+
 /*********************************** String ***********************************/
 export function getCode(length = 10, chars = 'all'): string {
   if (typeof length !== 'number' || length < 1) {
