@@ -1,4 +1,4 @@
-import { chunks, clone, degToRad, deleteCookie, getCode, getCookie, getNested, getPassword, getQuery, getQueryParam, getQueue, objToParams, objToQuery, radToDeg, random, range, round, setCookie, shuffle, sort, unique } from './jackknife';
+import { chunks, clone, degToRad, deleteCookie, getCode, getColor, getCookie, getNested, getPassword, getQuery, getQueryParam, getQueue, objToParams, objToQuery, radToDeg, random, range, round, setCookie, shuffle, sort, unique } from './jackknife';
 
 describe('jackknife', () => {
 
@@ -148,6 +148,10 @@ describe('jackknife', () => {
       expect(() => getPassword(2)).toThrow(error);
       expect(getPassword().length).toBe(10);
       expect(getPassword(6).length).toBe(6);
+    });
+
+    it('getColor', () => {
+      expect(getColor()).toMatch(/^#[0-9A-F]{6}$/);
     });
   });
 

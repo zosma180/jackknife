@@ -219,8 +219,11 @@ export function getPassword(length = 10): string {
   return shuffled.join('');
 }
 
+export function getColor(): string {
+  return '#' + getCode(6, '0123456789ABCDEF');
+}
+
 /*********************************** Object ***********************************/
-export interface KeyValue<T> { [key: string]: T; }
 type Constructor<T> = new (...args: any[]) => T;
 
 export function clone<T>(target: T, sameClass = true): T {
@@ -251,6 +254,9 @@ export function getNested<T>(root: KeyValue<any>, path: string): T | null {
 
   return result;
 }
+
+export interface KeyValue<T> { [key: string]: T; }
+export interface LabelValue<T> { label: string; value: T; }
 
 /*********************************** Query string ***********************************/
 export function getQuery(): KeyValue<string> {

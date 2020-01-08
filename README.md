@@ -11,7 +11,7 @@
 
 ## Description
 **jackknife** is a multi-tool that provides a set of utility functions to face the wild projects.  
-All blades are typescript compatible.
+All the blades are typescript compatible.
 
 ---
 
@@ -69,10 +69,12 @@ For bugs and feature requests, please create an issue.
 * String
   - [getCode](#getcode)
   - [getPassword](#getpassword)
+  - [getColor](#getcolor)
 * Object
-  - [KeyValue](#keyvalue)
   - [clone](#clone)
   - [getNested](#getnested)
+  - [KeyValue](#keyvalue)
+  - [LabelValue](#labelvalue)
 * Query string
   - [getQuery](#getquery)
   - [getQueryParam](#getqueryparam)
@@ -281,15 +283,14 @@ console.log(password); // i.e. ';7hsE_%-77'
 
 ---
 
-### KeyValue
-<code>interface KeyValue\<T\> { [key: string]: T; }</code>
+### getColor
+<code>getColor(): string</code>
 
-An useful generic interface to cast common key-value objects.
+Generate a random color in hexadecimal notation.
 
 <pre>
-const stringCasted = myObject as KeyValue&lt;string&gt;;
-const choiceCasted = myObject as KeyValue&lt;string | number&gt;;
-const genericCasted = myObject as KeyValue&lt;any&gt;;
+const color = getColor();
+console.log(color); // i.e. '#'
 </pre>
 
 ---
@@ -317,6 +318,53 @@ Get the nested value of a object property by a string path.
 const test = { a: { b: [{ c: 'banana' }] } };
 const nested = getNested&lt;string&gt;(test, 'a.b.0.c');
 console.log(nested); // 'banana'
+</pre>
+
+---
+
+### KeyValue
+<code>interface KeyValue\<T\> { [key: string]: T; }</code>
+
+An useful interface to cast the generic key-value objects.
+
+<pre>
+const stringCasted: KeyValue&lt;string&gt; = {
+  some: 'string';
+};
+
+const choiceCasted: KeyValue&lt;string | number&gt; = {
+  some: 'string',
+  or: 2
+};
+
+const genericCasted: KeyValue&lt;any&gt; = {
+  some: 'string',
+  or: ...a mysterious thing
+};
+</pre>
+
+---
+
+### LabelValue
+<code>interface LabelValue\<T\> { label: string; value: T; }</code>
+
+An useful interface to cast the objects with the common label-value pair structure.
+
+<pre>
+const stringCasted: LabelValue&lt;string&gt; = {
+  label: 'A label',
+  value: 'A string';
+};
+
+const choiceCasted: LabelValue&lt;number&gt; = {
+  label: 'A label',
+  value: 8;
+};
+
+const genericCasted: LabelValue&lt;any&gt; = {
+  label: 'A label',
+  value: ...a mysterious thing
+};
 </pre>
 
 ---

@@ -1,3 +1,13 @@
+<a name="2.6.0"></a>
+## [2.6.0](https://github.com/zosma180/jackknife/compare/2.5.0...2.6.0) (2020-01-08)
+
+### Features
+
+* Added **getColor** API
+* Added **LabelValue** interface
+
+---
+
 <a name="2.5.0"></a>
 ## [2.5.0](https://github.com/zosma180/jackknife/compare/2.4.2...2.5.0) (2019-12-30)
 
