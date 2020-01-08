@@ -290,7 +290,7 @@ Generate a random color in hexadecimal notation.
 
 <pre>
 const color = getColor();
-console.log(color); // i.e. '#'
+console.log(color); // i.e. '#BC37D3'
 </pre>
 
 ---
@@ -356,7 +356,7 @@ const stringCasted: LabelValue&lt;string&gt; = {
   value: 'A string';
 };
 
-const choiceCasted: LabelValue&lt;number&gt; = {
+const numberCasted: LabelValue&lt;number&gt; = {
   label: 'A label',
   value: 8;
 };
