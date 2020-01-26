@@ -203,7 +203,7 @@ export function getCode(length = 10, chars = 'all'): string {
   return result;
 }
 
-export function getPassword(length = 10): string {
+export function getPassword(length = 12): string {
   if (typeof length !== 'number' || length < 6) {
     throw new Error('jackknife: called "getPassword" with invalid length.');
   }
@@ -212,7 +212,7 @@ export function getPassword(length = 10): string {
 
   const letters = getCode(alphanumericCount, 'letters');
   const numbers = getCode(alphanumericCount, 'numbers');
-  const symbols = getCode(length - (alphanumericCount * 2), 'symbols');
+  const symbols = getCode(length - (alphanumericCount * 2), '!$%&=?+*@#-_');
   const result = (letters + numbers + symbols).split('');
   const shuffled = shuffle(result);
 
