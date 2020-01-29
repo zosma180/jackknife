@@ -1,3 +1,12 @@
+<a name="2.6.2"></a>
+## [2.6.2](https://github.com/zosma180/jackknife/compare/2.6.1...2.6.2) (2020-01-29)
+
+### Fixes
+
+* Fixed the **objToParams** API null/object casting
+
+---
+
 <a name="2.6.1"></a>
 ## [2.6.1](https://github.com/zosma180/jackknife/compare/2.6.0...2.6.1) (2020-01-26)
 

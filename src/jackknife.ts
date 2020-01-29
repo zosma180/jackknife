@@ -307,13 +307,13 @@ export function objToParams(target: KeyValue<any>): KeyValue<string> {
       stringValue = value.join(',');
     } else if (value instanceof Date) {
       stringValue = value.toISOString();
-    } else if (typeof value === 'number' || typeof value === 'string') {
+    } else if (typeof value === 'number') {
       stringValue = String(value);
+    } else if (typeof value === 'string') {
+      stringValue = value;
     }
 
-    if (stringValue) {
-      result[key] = stringValue;
-    }
+    result[key] = stringValue;
   }
 
   return result;

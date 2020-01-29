@@ -146,7 +146,7 @@ describe('jackknife', () => {
       expect(() => getPassword(-1)).toThrow(error);
       expect(() => getPassword(0)).toThrow(error);
       expect(() => getPassword(2)).toThrow(error);
-      expect(getPassword().length).toBe(10);
+      expect(getPassword().length).toBe(12);
       expect(getPassword(6).length).toBe(6);
     });
 
@@ -217,8 +217,23 @@ describe('jackknife', () => {
       expect(objToParams(null as any)).toEqual({});
       expect(objToParams([])).toEqual({});
       expect(objToParams({})).toEqual({});
-      expect(objToParams({ a: 'value', b: 2, c: new Date('2020-01-01'), d: [2, 3], e: {} }))
-        .toEqual({ a: 'value', b: '2', c: '2020-01-01T00:00:00.000Z', d: '2,3' });
+      expect(objToParams({
+        a: 'value',
+        b: 2,
+        c: new Date('2020-01-01'),
+        d: [2, 3],
+        e: {},
+        f: '',
+        g: null,
+      })).toEqual({
+        a: 'value',
+        b: '2',
+        c: '2020-01-01T00:00:00.000Z',
+        d: '2,3',
+        e: '',
+        f: '',
+        g: '',
+      });
     });
   });
 
