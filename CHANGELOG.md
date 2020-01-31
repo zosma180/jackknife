@@ -1,3 +1,12 @@
+<a name="2.7.0"></a>
+## [2.7.0](https://github.com/zosma180/jackknife/compare/2.6.2...2.7.0) (2020-01-31)
+
+### Features
+
+* Added the optional "keepEmpty" parameters to **objToParams** API to maintain the empty values in the result
+
+---
+
 <a name="2.6.2"></a>
 ## [2.6.2](https://github.com/zosma180/jackknife/compare/2.6.1...2.6.2) (2020-01-29)
 

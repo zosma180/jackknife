@@ -217,7 +217,8 @@ describe('jackknife', () => {
       expect(objToParams(null as any)).toEqual({});
       expect(objToParams([])).toEqual({});
       expect(objToParams({})).toEqual({});
-      expect(objToParams({
+
+      const test = {
         a: 'value',
         b: 2,
         c: new Date('2020-01-01'),
@@ -225,7 +226,16 @@ describe('jackknife', () => {
         e: {},
         f: '',
         g: null,
-      })).toEqual({
+      };
+
+      expect(objToParams(test)).toEqual({
+        a: 'value',
+        b: '2',
+        c: '2020-01-01T00:00:00.000Z',
+        d: '2,3',
+      });
+
+      expect(objToParams(test, true)).toEqual({
         a: 'value',
         b: '2',
         c: '2020-01-01T00:00:00.000Z',

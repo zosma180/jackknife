@@ -406,17 +406,49 @@ console.log(query); // 'param1=value%201&param2=value%202'
 ---
 
 ### objToParams
-<code>objToParams(target: KeyValue\<any\>): KeyValue\<string\></code>
+<code>objToParams(target: KeyValue\<any\>, keepEmpty = false): KeyValue\<string\></code>
 
-Convert an object to another object with properties casted as valid GET param.
-This function can be useful with some frameworks (i.e. Angular) that require a KeyValue\<string\> objects as params of HTTP GET request.
-The array values will be joined with the ','.
-The dates will be converted to ISO string.
-The pure objects will be skipped.
+Convert an object to another object with properties casted as valid GET param.  
+This function can be useful with some frameworks (i.e. Angular) that require a KeyValue\<string\> objects as the params of HTTP GET request.  
+The array values will be joined with the ','.  
+The dates will be converted to ISO string.  
+If the **keepEmpty** is true, the result maintain the empty values also like empty strings, pure objects (as empty string) and null values (as empty string). Otherwise they will be skipped.
 
 <pre>
-const params = objToParams({ a: 'value', b: 2, c: new Date('2020-01-01'), d: [2, 3], e: {} });
-console.log(params); // { a: 'value', b: '2', c: '2020-01-01T00:00:00.000Z', d: '2,3' }
+const object = {
+  a: 'value',
+  b: 2,
+  c: new Date('2020-01-01'),
+  d: [2, 3],
+  e: {},
+  f: null,
+  g: ''
+};
+
+const params = objToParams(object);
+console.log(params);
+/*
+  {
+    a: 'value',
+    b: '2',
+    c: '2020-01-01T00:00:00.000Z',
+    d: '2,3'
+  }
+*/
+
+const paramsWithEmpty = objToParams(object, true);
+console.log(paramsWithEmpty);
+/*
+  {
+    a: 'value',
+    b: '2',
+    c: '2020-01-01T00:00:00.000Z',
+    d: '2,3',
+    e: '',
+    f: '',
+    g: ''
+  }
+*/
 </pre>
 
 ---

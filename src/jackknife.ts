@@ -294,7 +294,7 @@ export function objToQuery(target: KeyValue<any>): string {
   return result.join('&');
 }
 
-export function objToParams(target: KeyValue<any>): KeyValue<string> {
+export function objToParams(target: KeyValue<any>, keepEmpty = false): KeyValue<string> {
   if (!target || typeof target !== 'object') { return {}; }
   const result: KeyValue<string> = {};
   const keys = Object.keys(target);
@@ -313,7 +313,9 @@ export function objToParams(target: KeyValue<any>): KeyValue<string> {
       stringValue = value;
     }
 
-    result[key] = stringValue;
+    if (stringValue || keepEmpty) {
+      result[key] = stringValue;
+    }
   }
 
   return result;
