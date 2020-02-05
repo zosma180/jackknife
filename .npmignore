@@ -1,6 +1,5 @@
-# Development assets
+# Repository assets
 /src
-/deploy
 /test
 /tsconfig.json
 /tslint.json
