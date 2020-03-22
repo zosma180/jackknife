@@ -1,3 +1,12 @@
+<a name="2.7.1"></a>
+## [2.7.1](https://github.com/zosma180/jackknife/compare/2.7.0...2.7.1) (2020-03-22)
+
+### Improvements
+
+* Rebuilded the project after the security patch of the dependencies
+
+---
+
 <a name="2.7.0"></a>
 ## [2.7.0](https://github.com/zosma180/jackknife/compare/2.6.2...2.7.0) (2020-01-31)
 
