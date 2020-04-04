@@ -340,11 +340,11 @@ export function getQueue<T>(tasks: Array<() => Promise<T>>): Promise<T[]> {
   return queue.then(() => results);
 }
 
-export function requestFullscreen(element: HTMLElement): Promise<void> {
+export function requestFullscreen(element: any): Promise<void> {
   const api = element.requestFullscreen
-    || (element as any).webkitRequestFullscreen
-    || (element as any).mozRequestFullscreen
-    || (element as any).msRequestFullscreen;
+    || element.webkitRequestFullscreen
+    || element.mozRequestFullscreen
+    || element.msRequestFullscreen;
 
   if (!api) { throw new Error('jackknife: requestFullscreen not supported by your browser.'); }
 

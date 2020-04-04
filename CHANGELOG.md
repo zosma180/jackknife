@@ -1,3 +1,12 @@
+<a name="2.7.2"></a>
+## [2.7.2](https://github.com/zosma180/jackknife/compare/2.7.1...2.7.2) (2020-04-04)
+
+### Fixes
+
+* Fixed the HTMLElement type issue with NodeJS
+
+---
+
 <a name="2.7.1"></a>
 ## [2.7.1](https://github.com/zosma180/jackknife/compare/2.7.0...2.7.1) (2020-03-22)
 
