@@ -10,7 +10,7 @@
   "main": "dist/jackknife.js",
   "scripts": {
     "lint": "tslint -c tslint.json 'src/**/*.ts'",
-    "build": "npx tsc && npx uglifyjs --compress --mangle --output dist/jackknife.min.js -- dist/*.js",
+    "build": "npm run lint && npx tsc && npx uglifyjs --compress --mangle --output dist/jackknife.min.js -- dist/*.js",
     "deploy": "npm-deploy",
     "test": "./test/run"
   },
