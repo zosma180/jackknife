@@ -1,3 +1,13 @@
+<a name="2.8.0"></a>
+## [2.8.0](https://github.com/zosma180/jackknife/compare/2.7.2...2.8.0) (2020-04-11)
+
+### Features
+
+* Added the **datetime** API
+* Added the **pad** API
+
+---
+
 <a name="2.7.2"></a>
 ## [2.7.2](https://github.com/zosma180/jackknife/compare/2.7.1...2.7.2) (2020-04-04)
 
@@ -48,8 +58,8 @@
 
 ### Features
 
-* Added **getColor** API
-* Added **LabelValue** interface
+* Added the **getColor** API
+* Added the **LabelValue** interface
 
 ---
 
@@ -58,7 +68,7 @@
 
 ### Features
 
-* Added **range** API
+* Added the **range** API
 
 ---
 
@@ -86,7 +96,7 @@
 
 ### Features
 
-* Added **unique** API
+* Added the **unique** API
 
 ---
 
@@ -104,7 +114,7 @@
 
 ### Features
 
-* Added **objToParams** API
+* Added the **objToParams** API
 
 ---
 
@@ -132,8 +142,8 @@
 
 ### Features
 
-* Added **KeyValue** interface
-* Added **getNested** API
+* Added the **KeyValue** interface
+* Added the **getNested** API
 
 ### Improvements
 

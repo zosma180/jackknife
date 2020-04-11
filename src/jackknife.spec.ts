@@ -1,4 +1,4 @@
-import { chunks, clone, degToRad, deleteCookie, getCode, getColor, getCookie, getNested, getPassword, getQuery, getQueryParam, getQueue, objToParams, objToQuery, radToDeg, random, range, round, setCookie, shuffle, sort, unique } from './jackknife';
+import { chunks, clone, datetime, degToRad, deleteCookie, getCode, getColor, getCookie, getNested, getPassword, getQuery, getQueryParam, getQueue, objToParams, objToQuery, pad, radToDeg, random, range, round, setCookie, shuffle, sort, unique } from './jackknife';
 
 describe('jackknife', () => {
 
@@ -265,6 +265,17 @@ describe('jackknife', () => {
 
       return getQueue(tasks)
         .then(results => expect(results.join('')).toBe('123'));
+    });
+
+    it('datetime', () => {
+      const date = new Date('2020-01-01T01:00:00');
+      expect(datetime(date)).toContain('2020-01-01T01:00:00');
+      expect(datetime(date, false)).toBe('2020-01-01');
+    });
+
+    it('pad', () => {
+      expect(pad(8, 4, '0')).toBe('0008');
+      expect(pad(8, 1, '0')).toBe('8');
     });
   });
 

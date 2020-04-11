@@ -84,6 +84,8 @@ For bugs and feature requests, please create an issue.
   - [getQueue](#getqueue)
   - [requestFullscreen](#requestfullscreen)
   - [exitFullscreen](#exitfullscreen)
+  - [datetime](#datetime)
+  - [pad](#pad)
 
 ---
 
@@ -497,3 +499,28 @@ Exit from the full-screen mode.
 This api is only a shortcut for all browser-specific 'exitFullscreen' (webkit, moz, ms).
 
 <pre>exitFullscreen();</pre>
+
+---
+
+### datetime
+<code>datetime(date = new Date(), withTime = true): string</code>
+
+Get the current date-time based on the local timezone.
+The format is "yyyy-mm-ddTHH:ii:ss+TZ".
+
+<pre>
+const now = datetime();
+console.log(now); // i.e. '2020-04-10T23:46:24+0200'
+</pre>
+
+---
+
+### pad
+<code>pad(value: number | string, length: number, symbol: string): string</code>
+
+Add a start padding to a value.
+
+<pre>
+const padded = pad(2, 4, '0');
+console.log(padded); // 0002
+</pre>

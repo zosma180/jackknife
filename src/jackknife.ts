@@ -361,3 +361,31 @@ export function exitFullscreen(): Promise<void> {
 
   return api.call(document);
 }
+
+export function datetime(date = new Date(), withTime = true): string {
+  const year = date.getFullYear();
+  const month = pad(date.getMonth() + 1, 2, '0');
+  const day = pad(date.getDate(), 2, '0');
+  let result = `${year}-${month}-${day}`;
+
+  if (withTime) {
+    const hours = pad(date.getHours(), 2, '0');
+    const minutes = pad(date.getMinutes(), 2, '0');
+    const seconds = pad(date.getSeconds(), 2, '0');
+    const tzSearch = date.toTimeString().match(/GMT([+-][0-9]{4})/);
+    const timezone = tzSearch ? tzSearch[1] : '';
+    result += `T${hours}:${minutes}:${seconds}${timezone}`;
+  }
+
+  return result;
+}
+
+export function pad(value: number | string, length: number, symbol: string): string {
+  let result = value.toString();
+
+  for (let i = result.length; i < length; i++) {
+    result = symbol + result;
+  }
+
+  return result;
+}

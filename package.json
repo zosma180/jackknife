@@ -11,7 +11,7 @@
   "scripts": {
     "lint": "tslint -c tslint.json 'src/**/*.ts'",
     "build": "npm run lint && npx tsc && npx uglifyjs --compress --mangle --output dist/jackknife.min.js -- dist/*.js",
-    "deploy": "npm-deploy",
+    "deploy": "npm-deploy . .",
     "test": "./test/run"
   },
   "keywords": [
