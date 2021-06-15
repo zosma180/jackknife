@@ -143,10 +143,10 @@ Generate a random number (integer or float) in the defined range.
 
 <pre>
 const randomInteger = random(5, 10);
-console.log(randomInteger); // i.e. 7
+console.log(randomInteger); // e.g. 7
 
 const randomFloat = random(5, 10, 3);
-console.log(randomFloat); // i.e. 8.842
+console.log(randomFloat); // e.g. 8.842
 </pre>
 
 ---
@@ -235,7 +235,7 @@ Shuffle an array.
 <pre>
 const array = ['a', 'b', 'c', 'd', 'e'];
 const shuffled = shuffle&lt;string&gt;(array);
-console.log(shuffled); // i.e. ['b', 'd', 'c', 'a', 'e']
+console.log(shuffled); // e.g. ['b', 'd', 'c', 'a', 'e']
 </pre>
 
 ---
@@ -260,14 +260,14 @@ Generate a random string.
 
 <pre>
 // Default
-console.log(getCode()); // i.e. 'nk3IGBPiOh'
+console.log(getCode()); // e.g. 'nk3IGBPiOh'
 
 // Predefined set
-console.log(getCode(10, 'letters')); // i.e. 'LTaezrWFom'
-console.log(getCode(10, 'numbers')); // i.e. '9060379844'
+console.log(getCode(10, 'letters')); // e.g. 'LTaezrWFom'
+console.log(getCode(10, 'numbers')); // e.g. '9060379844'
 
 // Custom set
-console.log(getCode(10, 'abc123$%&')); // i.e. '12&%c222ac'
+console.log(getCode(10, 'abc123$%&')); // e.g. '12&%c222ac'
 </pre>
 
 ---
@@ -280,7 +280,7 @@ Generate a strong password. It mix up letters, numbers and symbols proportionall
 
 <pre>
 const password = getPassword();
-console.log(password); // i.e. ';7hsE_%-77'
+console.log(password); // e.g. ';7hsE_%-77'
 </pre>
 
 ---
@@ -292,7 +292,7 @@ Generate a random color in hexadecimal notation.
 
 <pre>
 const color = getColor();
-console.log(color); // i.e. '#BC37D3'
+console.log(color); // e.g. '#BC37D3'
 </pre>
 
 ---
@@ -378,7 +378,7 @@ Get the query string of the current url.
 
 <pre>
 const query = getQuery();
-console.log(query); // i.e. { param: 'value' }
+console.log(query); // e.g. { param: 'value' }
 </pre>
 
 ---
@@ -390,7 +390,7 @@ Get a specific param of the current query string.
 
 <pre>
 const param = getQueryParam('param');
-console.log(param); // i.e. 'value'
+console.log(param); // e.g. 'value'
 </pre>
 
 ---
@@ -411,7 +411,7 @@ console.log(query); // 'param1=value%201&param2=value%202'
 <code>objToParams(target: KeyValue\<any\>, keepEmpty = false): KeyValue\<string\></code>
 
 Convert an object to another object with properties casted as valid GET param.  
-This function can be useful with some frameworks (i.e. Angular) that require a KeyValue\<string\> objects as the params of HTTP GET request.  
+This function can be useful with some frameworks (e.g. Angular) that require a KeyValue\<string\> objects as the params of HTTP GET request.  
 The array values will be joined with the ','.  
 The dates will be converted to ISO string.  
 If the **keepEmpty** is true, the result maintain the empty values also like empty strings, pure objects (as empty string) and null values (as empty string). Otherwise they will be skipped.
@@ -510,7 +510,7 @@ The format is "yyyy-mm-ddTHH:ii:ss+TZ".
 
 <pre>
 const now = datetime();
-console.log(now); // i.e. '2020-04-10T23:46:24+0200'
+console.log(now); // e.g. '2020-04-10T23:46:24+0200'
 </pre>
 
 ---

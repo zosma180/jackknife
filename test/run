@@ -15,19 +15,26 @@ try {
 
 // Compile the sources and watch them
 const tsc = exec('npx tsc -w --project test/tsconfig.json');
-tsc.stdout.on('data', data => console.log(String(data)));
-tsc.stderr.on('data', data => {
-  console.error(String(data));
-  error('Build failed, operation aborted.');
+let server;
+
+tsc.stdout.on('data', data => {
+  console.log(`TSC ${data}`);
+
+  if (data.includes('Found 0 errors') && !server) {
+    // Run the local test server
+    server = exec('npx lite-server -c test/bs-config.js');
+    server.stdout.on('data', data => console.log(`LS ${data}`));
+    server.stderr.on('data', data => error(`LS ${data}`));
+    server.on('close', code => {
+      tsc.kill();
+      process.exit(code);
+    });
+  }
 });
 
-// Run the local test server
-const server = exec('npx live-server --watch=test --open="test/index.html?param=the%20value"');
-server.stdout.on('data', data => console.log(String(data)));
-server.stderr.on('data', data => error(String(data)));
-server.on('close', code => {
-  tsc.kill();
-  process.exit(code);
+tsc.stderr.on('data', data => {
+  console.error(`TSC ${data}`);
+  error('Build failed, operation aborted.');
 });
 
 // Error function
