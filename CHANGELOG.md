@@ -1,4 +1,15 @@
+<a name="2.8.1"></a>
+
+## [2.8.1](https://github.com/zosma180/jackknife/compare/2.8.0...2.8.1) (2022-07-22)
+
+### Bug Fixes
+
+- Updated the package-lock to fix the security issues
+
+---
+
 <a name="2.8.0"></a>
+
 ## [2.8.0](https://github.com/zosma180/jackknife/compare/2.7.2...2.8.0) (2020-04-11)
 
 ### Features
@@ -9,6 +20,7 @@
 ---
 
 <a name="2.7.2"></a>
+
 ## [2.7.2](https://github.com/zosma180/jackknife/compare/2.7.1...2.7.2) (2020-04-04)
 
 ### Fixes
@@ -18,6 +30,7 @@
 ---
 
 <a name="2.7.1"></a>
+
 ## [2.7.1](https://github.com/zosma180/jackknife/compare/2.7.0...2.7.1) (2020-03-22)
 
 ### Improvements
@@ -27,6 +40,7 @@
 ---
 
 <a name="2.7.0"></a>
+
 ## [2.7.0](https://github.com/zosma180/jackknife/compare/2.6.2...2.7.0) (2020-01-31)
 
 ### Features
@@ -36,6 +50,7 @@
 ---
 
 <a name="2.6.2"></a>
+
 ## [2.6.2](https://github.com/zosma180/jackknife/compare/2.6.1...2.6.2) (2020-01-29)
 
 ### Fixes
@@ -45,6 +60,7 @@
 ---
 
 <a name="2.6.1"></a>
+
 ## [2.6.1](https://github.com/zosma180/jackknife/compare/2.6.0...2.6.1) (2020-01-26)
 
 ### Improvements
@@ -54,6 +70,7 @@
 ---
 
 <a name="2.6.0"></a>
+
 ## [2.6.0](https://github.com/zosma180/jackknife/compare/2.5.0...2.6.0) (2020-01-08)
 
 ### Features
@@ -64,6 +81,7 @@
 ---
 
 <a name="2.5.0"></a>
+
 ## [2.5.0](https://github.com/zosma180/jackknife/compare/2.4.2...2.5.0) (2019-12-30)
 
 ### Features
@@ -73,6 +91,7 @@
 ---
 
 <a name="2.4.2"></a>
+
 ## [2.4.2](https://github.com/zosma180/jackknife/compare/2.4.1...2.4.2) (2019-12-19)
 
 ### Improvements
@@ -83,6 +102,7 @@
 ---
 
 <a name="2.4.1"></a>
+
 ## [2.4.1](https://github.com/zosma180/jackknife/compare/2.4.0...2.4.1) (2019-12-16)
 
 ### Improvements
@@ -92,6 +112,7 @@
 ---
 
 <a name="2.4.0"></a>
+
 ## [2.4.0](https://github.com/zosma180/jackknife/compare/2.3.1...2.4.0) (2019-12-16)
 
 ### Features
@@ -101,6 +122,7 @@
 ---
 
 <a name="2.3.1"></a>
+
 ## [2.3.1](https://github.com/zosma180/jackknife/compare/2.3.0...2.3.1) (2019-12-15)
 
 ### Improvements
@@ -110,6 +132,7 @@
 ---
 
 <a name="2.3.0"></a>
+
 ## [2.3.0](https://github.com/zosma180/jackknife/compare/2.2.0...2.3.0) (2019-12-13)
 
 ### Features
@@ -119,6 +142,7 @@
 ---
 
 <a name="2.2.0"></a>
+
 ## [2.2.0](https://github.com/zosma180/jackknife/compare/2.1.0...2.2.0) (2019-11-26)
 
 ### Improvements
@@ -128,6 +152,7 @@
 ---
 
 <a name="2.1.0"></a>
+
 ## [2.1.0](https://github.com/zosma180/jackknife/compare/2.0.0...2.1.0) (2019-08-23)
 
 ### Features
@@ -138,6 +163,7 @@
 ---
 
 <a name="2.0.0"></a>
+
 ## [2.0.0](https://github.com/zosma180/jackknife/compare/1.0.0...2.0.0) (2019-08-22)
 
 ### Features
@@ -152,6 +178,7 @@
 ---
 
 <a name="1.0.0"></a>
+
 ## 1.0.0 (2019-08-17)
 
 ### Features
