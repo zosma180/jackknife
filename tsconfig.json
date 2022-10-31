@@ -6,9 +6,12 @@
     "src/**/*.spec.ts"
   ],
   "compilerOptions": {
-    "target": "es5",
-    "lib": [ "es5", "dom", "es2015.iterable", "es2015.promise" ],
-    "module": "commonjs",
+    "target": "es2015",
+    "lib": [
+      "es2018",
+      "dom"
+    ],
+    "module": "es2020",
     "declaration": true,
     "outDir": "dist",
     "strict": true,

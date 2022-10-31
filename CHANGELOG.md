@@ -1,3 +1,13 @@
+<a name="3.0.0"></a>
+
+## [3.0.0](https://github.com/zosma180/jackknife/compare/2.8.1...3.0.0) (2022-10-31)
+
+### Features
+
+- Compiled the project as ES2015 module
+
+---
+
 <a name="2.8.1"></a>
 
 ## [2.8.1](https://github.com/zosma180/jackknife/compare/2.8.0...2.8.1) (2022-07-22)

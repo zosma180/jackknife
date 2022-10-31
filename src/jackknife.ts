@@ -4,7 +4,7 @@
  */
 
 /*********************************** Cookie ***********************************/
-export class CookieOptions {
+export interface CookieOptions {
   expires?: Date;
   maxAge?: number;
   domain?: string;
