@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 'use strict';
-const { exec, execSync } = require('child_process');
+import { exec, execSync } from 'child_process';
 
 // Clean the bundle
 execSync('rm -rf test/bundle');
@@ -22,7 +22,7 @@ tsc.stdout.on('data', data => {
 
   if (data.includes('Found 0 errors') && !server) {
     // Run the local test server
-    server = exec('npx lite-server -c test/bs-config.js');
+    server = exec('npx browser-sync start --server -c test/bs-config.cjs');
     server.stdout.on('data', data => console.log(`LS ${data}`));
     server.stderr.on('data', data => error(`LS ${data}`));
     server.on('close', code => {

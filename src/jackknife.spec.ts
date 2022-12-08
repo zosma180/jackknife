@@ -1,4 +1,4 @@
-import { chunks, clone, datetime, degToRad, deleteCookie, getCode, getColor, getCookie, getNested, getPassword, getQuery, getQueryParam, getQueue, objToParams, objToQuery, pad, radToDeg, random, range, round, setCookie, shuffle, sort, unique } from './jackknife';
+import { chunks, clone, datetime, degToRad, deleteCookie, getCode, getColor, getCookie, getNested, getPassword, getQuery, getQueryParam, getQueue, objToParams, objToQuery, pad, radToDeg, random, range, round, setCookie, shuffle, sort, unique } from './jackknife.js';
 
 describe('jackknife', () => {
 

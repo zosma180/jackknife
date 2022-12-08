@@ -10,20 +10,10 @@
   <script src="../node_modules/jasmine-core/lib/jasmine-core/jasmine.js"></script>
   <script src="../node_modules/jasmine-core/lib/jasmine-core/jasmine-html.js"></script>
   <script src="../node_modules/jasmine-core/lib/jasmine-core/boot.js"></script>
-
-  <!-- Resolve modules -->
-  <script>
-    var exports = window.jackknife = {};
-    var require = function(m) {
-      if (m.indexOf('./') !== 0) { throw new Error('require() of third party modules in the test environment isn\'t supported yet.'); }
-      var name = m.replace(/[\s\S]+\//g, '');
-      return window[name];
-    };
-  </script>
 </head>
 
 <body>
-  <script src="bundle/jackknife.js"></script>
-  <script src="bundle/jackknife.spec.js"></script>
+  <script type="module" src="bundle/jackknife.js"></script>
+  <script type="module" src="bundle/jackknife.spec.js"></script>
 </body>
 </html>
