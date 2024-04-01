@@ -5,6 +5,7 @@
 ### Features
 
 - Added the new APIs:
+    - `bytes`
     - `unique`
 - Renamed the APIs:
     - `unique` -> `identifier`
