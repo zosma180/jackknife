@@ -3,17 +3,18 @@
     "src/**/*.ts"
   ],
   "exclude": [
-    "src/**/*.spec.ts"
+    "src/**/*.test.ts"
   ],
   "compilerOptions": {
-    "target": "es2015",
     "lib": [
       "es2018",
       "dom"
     ],
+    "outDir": "dist/mjs",
+    "target": "es2015",
     "module": "es2020",
+    "moduleResolution": "Bundler",
     "declaration": true,
-    "outDir": "dist",
     "strict": true,
     "esModuleInterop": true
   }

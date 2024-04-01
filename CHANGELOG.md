@@ -1,10 +1,40 @@
+<a name="4.0.0"></a>
+
+## [4.0.0](https://github.com/zosma180/jackknife/compare/3.8.0...4.0.0) (2024-03-30)
+
+### Features
+
+- Added the new APIs:
+    - `unique`
+- Renamed the APIs:
+    - `unique` -> `identifier`
+    - `getCode` -> `code`
+    - `getColor` -> `color`
+    - `getNested` -> `nested`
+    - `getQuery` -> `querystring`
+- Removed the obsolote APIs:
+    - `requestFullscreen`
+    - `exitFullscreen`
+    - `querystringParam`
+    - `getQueue`
+    - `clone`
+    - `KeyValue`
+    - `objToQuery`
+    - `objToParams`
+    - `getPassword`
+- Added the CommonJS output.
+- Reviewed the codebase.
+- Replaced jasmine test tool with jest.
+
+---
+
 <a name="3.0.0"></a>
 
 ## [3.0.0](https://github.com/zosma180/jackknife/compare/2.8.1...3.0.0) (2022-10-31)
 
 ### Features
 
-- Compiled the project as ES2015 module
+- Compiled the project as ES2015 module.
 
 ---
 
@@ -14,7 +44,7 @@
 
 ### Bug Fixes
 
-- Updated the package-lock to fix the security issues
+- Updated the package-lock to fix the security issues.
 
 ---
 
@@ -24,8 +54,8 @@
 
 ### Features
 
-* Added the **datetime** API
-* Added the **pad** API
+* Added the `datetime` API.
+* Added the `pad` API.
 
 ---
 
@@ -35,7 +65,7 @@
 
 ### Fixes
 
-* Fixed the HTMLElement type issue with NodeJS
+* Fixed the HTMLElement type issue with NodeJS.
 
 ---
 
@@ -45,7 +75,7 @@
 
 ### Improvements
 
-* Rebuilded the project after the security patch of the dependencies
+* Rebuilded the project after the security patch of the dependencies.
 
 ---
 
@@ -55,7 +85,7 @@
 
 ### Features
 
-* Added the optional "keepEmpty" parameters to **objToParams** API to maintain the empty values in the result
+* Added the optional `keepEmpty` parameters to `objToParams` API to maintain the empty values in the result.
 
 ---
 
@@ -65,7 +95,7 @@
 
 ### Fixes
 
-* Fixed the **objToParams** API null/object casting
+* Fixed the `objToParams` API null/object casting.
 
 ---
 
@@ -75,7 +105,7 @@
 
 ### Improvements
 
-* Updated the **getPassword** API (default length and symbols)
+* Updated the `getPassword` API (default length and symbols).
 
 ---
 
@@ -85,8 +115,8 @@
 
 ### Features
 
-* Added the **getColor** API
-* Added the **LabelValue** interface
+* Added the `getColor` API.
+* Added the `LabelValue` interface.
 
 ---
 
@@ -96,7 +126,7 @@
 
 ### Features
 
-* Added the **range** API
+* Added the `range` API.
 
 ---
 
@@ -106,8 +136,8 @@
 
 ### Improvements
 
-* Updated logo
-* Converted development scripts to node
+* Updated the logo.
+* Converted the development scripts to node.
 
 ---
 
@@ -117,7 +147,7 @@
 
 ### Improvements
 
-* Added "src" folder to npmignore
+* Added `src` folder to npmignore.
 
 ---
 
@@ -127,7 +157,7 @@
 
 ### Features
 
-* Added the **unique** API
+* Added the `unique` API.
 
 ---
 
@@ -137,7 +167,7 @@
 
 ### Improvements
 
-* Added npmignore file to reduce the package output
+* Added npmignore file to reduce the package output.
 
 ---
 
@@ -147,7 +177,7 @@
 
 ### Features
 
-* Added the **objToParams** API
+* Added the `objToParams` API.
 
 ---
 
@@ -157,7 +187,7 @@
 
 ### Improvements
 
-* Added right links to README anchors
+* Added right links to the README anchors.
 
 ---
 
@@ -167,8 +197,8 @@
 
 ### Features
 
-* **random**: *WARNING* - replaced **float** option with the customizable **decimals** count
-* **getPassword**: *WARNING* - minimum **length** has been increased to **6**
+* `random`: *WARNING* - replaced `float` option with the customizable `decimals` count.
+* `getPassword`: *WARNING* - minimum `length` has been increased to `6`.
 
 ---
 
@@ -178,12 +208,12 @@
 
 ### Features
 
-* Added the **KeyValue** interface
-* Added the **getNested** API
+* Added the `KeyValue` interface.
+* Added the `nested` API.
 
 ### Improvements
 
-* Implemented **Typescript** codebase
+* Implemented `Typescript` codebase.
 
 ---
 
@@ -193,4 +223,4 @@
 
 ### Features
 
-* Released project
+* Released the project.
