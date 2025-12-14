@@ -1,6 +1,6 @@
 {
   "name": "jackknife",
-  "version": "4.0.0",
+  "version": "4.0.1",
   "description": "The useful compact tool.",
   "homepage": "https://github.com/zosma180/jackknife",
   "repository": {
@@ -55,7 +55,7 @@
     "package.json",
     "LICENSE",
     "README",
-      "DISCLAIMER",
+    "DISCLAIMER",
     "dist"
   ]
 }
