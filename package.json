@@ -17,7 +17,7 @@
     "build-mjs": "npx tsc",
     "build-cjs": "npx tsc --project tsconfig.cjs.json",
     "build": "npm run clean && npm run lint && npm run build-mjs && npm run build-cjs",
-    "deploy": "npm-deploy . .",
+    "deploy": "npm-deploy.mjs . .",
     "test": "jest",
     "lint": "eslint \"src/**/*.ts*\" --max-warnings=0",
     "lint:fix": "npm run lint -- --fix"
@@ -55,6 +55,7 @@
     "package.json",
     "LICENSE",
     "README",
+      "DISCLAIMER",
     "dist"
   ]
 }

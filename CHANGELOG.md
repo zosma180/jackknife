@@ -1,3 +1,13 @@
+<a name="4.0.1"></a>
+
+## [4.0.1](https://github.com/zosma180/jackknife/compare/4.0.0...4.0.1) (2025-12-12)
+
+### Features
+
+- added the DISCLAIMER file.
+
+---
+
 <a name="4.0.0"></a>
 
 ## [4.0.0](https://github.com/zosma180/jackknife/compare/3.8.0...4.0.0) (2024-03-30)
