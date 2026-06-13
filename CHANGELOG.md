@@ -1,3 +1,13 @@
+<a name="4.0.2"></a>
+
+## [4.0.2](https://github.com/zosma180/jackknife/compare/4.0.1...4.0.2) (2026-06-13)
+
+### Security
+
+- Security updates and patches for June 2026.
+
+---
+
 <a name="4.0.1"></a>
 
 ## [4.0.1](https://github.com/zosma180/jackknife/compare/4.0.0...4.0.1) (2025-12-12)
