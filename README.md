@@ -9,6 +9,12 @@
 
 ---
 
+## Maintenance notice
+this package is no longer actively maintained. No further releases or bug fixes are planned.
+The package remains available for existing users, but new projects should consider alternatives.
+
+---
+
 ## Description
 **jackknife** is a multi-tool that provides a set of utility functions to face the wild projects.  
 All the blades are typescript compatible.
